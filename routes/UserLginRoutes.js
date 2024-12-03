@@ -9,8 +9,8 @@ router.post('/login', async (req, res) => {
 
     try{
         const newUser = new Login({ Username, Email, Password });
-        await Login.save();
-        res.status(201).json({ message: "User logged in successfully",Login});
+        await newUser.save();
+        res.status(201).json({ message: "User logged in successfully", newUser});
     }
 
     catch(error) {
